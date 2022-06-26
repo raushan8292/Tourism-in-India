@@ -1,0 +1,238 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "lato", sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  box-sizing: border-box;
+}
+
+.header {
+  height: 100vh;
+  /* background-image: linear-gradient( to right bottom,rgba(0, 128, 0, 0.495) , rgba(218, 165, 32, 0.425) ,rgba(0, 0, 0, 0.774)) , url(/image-video/hero.jpg); */
+  /* background-size: cover;
+     background-position: top;  */
+  transition: all 0.2s;
+  clip-path: polygon(49% 0, 100% 0, 100% 76%, 0 100%, 0 0);
+}
+
+.video {
+  position: absolute;
+  z-index: -1;
+}
+
+.nav {
+  width: 100%;
+  display: flex;
+  position: absolute;
+  align-items: center;
+  padding: 20px;
+  justify-content: space-between;
+  background: transparent;
+}
+.nav h1 {
+  position: absolute;
+  margin-left: 28px;
+  color: #fff;
+}
+
+.circle {
+  height: 55px;
+  width: 55px;
+  background-color: rgba(163, 161, 28, 0.968);
+  border-radius: 50%;
+}
+.nav-bar {
+  display: inline-block;
+  animation: moveToButton 3s;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-bar a {
+  font-weight: 40px;
+  font-size: 17px;
+  margin-left: 30px;
+  text-decoration: none;
+  color: #fff;
+}
+#under-line:hover {
+  backface-visibility: hidden;
+
+  color: darkblue;
+  border-bottom: 2px solid #fff;
+  transition: all 0.2s;
+  box-shadow: ;
+}
+.border {
+  padding: 5px 20px;
+  border: 1px solid white;
+  border-radius: 5px;
+}
+.border:hover {
+  box-shadow: 0 10px 20px rgb(0, 0, 0, 0.2);
+
+  border: 1px solid #0000;
+  background-color: darkblue;
+  border-radius: 6px;
+  padding: 5px 12px;
+  color: #fff;
+}
+#toogle {
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ri-search-line,
+.ri-menu-line {
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+  font-size: 32px;
+  margin-right: 20px;
+}
+.ri-search-line {
+  margin-right: 40px;
+}
+#toogle a {
+  text-decoration: none;
+  top: 64px;
+  left: 64px;
+}
+.ri-menu-line:hover {
+  color: darkblue;
+}
+.ri-search-line:hover {
+  color: darkblue;
+}
+
+.text-box {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.heading-primary {
+  color: white;
+  text-transform: uppercase;
+  backface-visibility: hidden;
+}
+
+.heading-primary--main {
+  display: block;
+  font-size: 6rem;
+  font-weight: 400;
+  letter-spacing: 2rem;
+  animation: moveInRight 3s;
+}
+
+.heading-primary--sub {
+  display: block;
+  font-weight: 400;
+  letter-spacing: 1rem;
+  animation-name: moveInLeft;
+  animation-duration: 3s;
+}
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem);
+  }
+  80% {
+    transform: translateX(-1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem);
+  }
+  80% {
+    transform: translateX(1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+.btn {
+  margin-top: 40px;
+}
+.btn:link,
+.btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  display: inline-block;
+  padding: 15px 40px;
+  border-radius: 100px;
+  transition: all 0.2s;
+  position: relative;
+}
+.btn-white {
+  background-color: #fff;
+  color: #777;
+  font-size: 1em;
+  justify-content: space-between;
+}
+
+.btn:hover {
+  color: darkblue;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgb(0, 0, 0, 0.2);
+}
+.btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 20px rgb(0, 0, 0, 0.2);
+}
+
+.btn::after {
+  content: ""; /*yeh zaruri hai likhna after of before property use karna k liya  */
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  border-radius: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 0.4s;
+}
+.btn-white::after {
+  background-color: #fff;
+}
+
+.btn:hover::after {
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
+}
+
+.btn-animated {
+  animation: moveToButton 2s ease-out 0.7s;
+  /* animation-name: moveToButton ;
+    animation-duration: 3S; */
+  animation-fill-mode: backwards;
+}
+
+@keyframes moveToButton {
+  0% {
+    opacity: 0;
+    transform: translateY(3rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
